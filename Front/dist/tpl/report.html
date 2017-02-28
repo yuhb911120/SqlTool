@@ -1,0 +1,38 @@
+<div class="cs-page-subheader">
+    <div class="cs-page-crumb">
+        <span>{{app.subtitle | translate}}</span>
+    </div>
+</div>
+
+<div flex layout="column" class="cs-page-content">
+
+    <div class="cs-action-bar" layout="row">
+        <div class="cs-action-group" flex layout="row">
+            <div class="cs-subform-control">
+                <textarea ng-model="query.sql" style="width:500px; height: 170px;"></textarea>
+            </div>
+            <div class="cs-subform-search">
+                <a>
+                    <md-icon class="material-icons md-24" ng-click="search()">search</md-icon>
+                </a>
+            </div>
+            <div class="cs-subform-control" ng-show="errMessage">
+                <span style="color: red">{{errMessage}}</span>
+            </div>
+        </div>
+    </div>
+
+    <md-table-container>
+        <table md-table multiple ng-model="selected" md-progress="promise">
+            <tbody md-body>
+            <tr md-row>
+                <th ng-repeat="vol in volumes">{{vol}}</th>
+            </tr>
+            <tr md-row ng-repeat="item in items">
+                <td md-cell ng-repeat="vol in volumes">{{item[vol]}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </md-table-container>
+
+</div>

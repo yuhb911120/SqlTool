@@ -1,0 +1,9 @@
+{
+  "appenders": [
+    { "type": "console" },
+    { "type": "dateFile", "filename": "logs/Tool-log", "pattern": "-yyyy-MM-dd.log", "alwaysIncludePattern": true }
+  ],
+  "levels": {
+    "[all]": "INFO"
+  }
+}
